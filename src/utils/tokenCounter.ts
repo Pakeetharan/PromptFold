@@ -1,24 +1,25 @@
+import { encode } from 'gpt-tokenizer';
+
 /**
- * Estimates the number of tokens in a text string.
- * Uses a rough heuristic acceptable for GPT-style tokenizers.
+ * Counts the exact number of tokens in a text string using GPT tokenizer.
+ * Uses the gpt-tokenizer library for accurate GPT-3.5/GPT-4 token counting.
  *
- * Approximation: ~0.75 tokens per word, accounting for punctuation and whitespace.
- * This is a simplified estimation but provides useful guidance.
+ * @param text - The text to count tokens for
+ * @returns The exact number of tokens
  */
 export function estimateTokenCount(text: string): number {
   if (!text || text.trim().length === 0) {
     return 0;
   }
 
-  // Split by whitespace to get words
-  const words = text.trim().split(/\s+/);
-
-  // Count words
-  const wordCount = words.length;
-
-  // Rough approximation: ~0.75 tokens per word
-  // Adding slight overhead for punctuation
-  const estimatedTokens = Math.ceil(wordCount * 0.75);
-
-  return estimatedTokens;
+  try {
+    // Encode the text to get tokens
+    const tokens = encode(text);
+    return tokens.length;
+  } catch (error) {
+    // Fallback to word-based estimation if encoding fails
+    console.error('Token encoding failed, using fallback:', error);
+    const words = text.trim().split(/\s+/);
+    return Math.ceil(words.length * 0.75);
+  }
 }

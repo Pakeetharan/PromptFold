@@ -18,11 +18,11 @@ PromptFold is a production-ready web application that transforms rich text input
 - 📝 **Rich Text Input**: Paste formatted text with paragraphs, numbered lists, bullet lists, and mixed formatting
 - 🎯 **Deterministic Transformation**: Same input always produces the same output
 - 🚀 **Token Optimization**: Removes redundant whitespace and normalizes formatting
-- 📊 **Live Token Counter**: Real-time estimation of token count using GPT-style heuristics
+- 📊 **Accurate Token Counter**: Real-time token counting using GPT tokenizer
 - 📋 **One-Click Copy**: Copy optimized prompt to clipboard instantly
 - 📱 **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
 - 🌐 **No Backend Required**: Runs entirely in the browser
-- ⚡ **Zero Dependencies**: Lightweight and fast
+- ⚡ **Lightweight**: Minimal dependencies for fast performance
 
 ## 🎯 Why PromptFold?
 
@@ -66,7 +66,7 @@ The application applies the following rules to optimize your text:
 - **Language**: [TypeScript 5.7](https://www.typescriptlang.org/)
 - **Styling**: [Tailwind CSS 3.4](https://tailwindcss.com/)
 - **Runtime**: [React 19](https://react.dev/)
-- **Zero external dependencies** for core functionality
+- **Token Counting**: [gpt-tokenizer](https://www.npmjs.com/package/gpt-tokenizer) for accurate GPT-3.5/GPT-4 token estimation
 
 ## 🚀 Getting Started
 
@@ -167,7 +167,7 @@ PromptFold/
 ### Key Components
 
 - **`transformer.ts`**: Pure utility functions for text transformation
-- **`tokenCounter.ts`**: GPT-style token estimation (~0.75 tokens per word)
+- **`tokenCounter.ts`**: Accurate GPT token counting using gpt-tokenizer library
 - **`RichTextInput`**: ContentEditable div with paste handling
 - **`PromptOutput`**: Read-only textarea with copy button and live stats
 
@@ -240,13 +240,12 @@ expect(output).toBe('Hello World');
 
 ## 🐛 Known Issues & Limitations
 
-- Token counting is approximate (not exact GPT tokenization)
 - Very deeply nested lists may not format perfectly
 - Browser compatibility requires modern JavaScript features
 
 ## 📋 Roadmap
 
-- [ ] Exact token counting using tiktoken
+- [x] Exact token counting using gpt-tokenizer ✅
 - [ ] Dark mode support
 - [ ] Export to file functionality
 - [ ] Undo/redo functionality
