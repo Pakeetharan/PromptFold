@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Ensure content editable div behaves like a text area */
+[contenteditable] {
+  min-height: 100px;
+  word-wrap: break-word;
+}
+
+[contenteditable]:empty:before {
+  content: attr(placeholder);
+  color: #9ca3af;
+  pointer-events: none;
+  display: block;
+}
+
+/* Ensure lists display properly in contentEditable */
+[contenteditable] ol,
+[contenteditable] ul {
+  padding-left: 2rem;
+  margin: 0.5rem 0;
+}
+
+[contenteditable] ol {
+  list-style-type: decimal;
+}
+
+[contenteditable] ul {
+  list-style-type: disc;
+}
+
+[contenteditable] li {
+  margin: 0.25rem 0;
+}
+
+[contenteditable] p {
+  margin: 0.5rem 0;
+}
+
+[contenteditable] p:first-child {
+  margin-top: 0;
+}
+
+[contenteditable] p:last-child {
+  margin-bottom: 0;
+}
