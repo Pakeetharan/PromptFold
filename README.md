@@ -9,7 +9,7 @@
 
 PromptFold is a production-ready web application that transforms rich text input (with formatting, lists, paragraphs) into clean, token-efficient prompts suitable for Large Language Models. It strips visual styling while preserving document structure, ensuring consistent and optimized output.
 
-🔗 **[Live Demo](https://promptfold.netlify.app)** | 📖 **[Documentation](#getting-started)**
+🔗 **[Live Demo](https://promptfold.netlify.app)** | 📖 **[Documentation](#-getting-started)**
 
 ---
 
