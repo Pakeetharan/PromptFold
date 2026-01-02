@@ -84,7 +84,7 @@ export default function Home() {
           <p className="mb-1">Built with Next.js, TypeScript, and Tailwind CSS</p>
           <p>
             <a
-              href="https://github.com/yourusername/PromptFold"
+              href="https://github.com/Pakeetharan/PromptFold"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600 hover:text-blue-700 underline"
@@ -92,7 +92,7 @@ export default function Home() {
               View on GitHub
             </a>
             {' • '}
-            <span>Created by Your Name</span>
+            <span>Created by Pakeetharan Balasubramaniam</span>
           </p>
         </footer>
       </div>

@@ -80,7 +80,7 @@ The application applies the following rules to optimize your text:
 1. **Clone the repository:**
 
 ```bash
-git clone https://github.com/yourusername/PromptFold.git
+git clone https://github.com/Pakeetharan/PromptFold.git
 cd PromptFold
 ```
 
@@ -319,8 +319,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Your Name**
 
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Twitter: [@yourhandle](https://twitter.com/yourhandle)
+- GitHub: [@Pakeetharan](https://github.com/Pakeetharan)
+- Twitter: [@PakeetharanB](https://twitter.com/PakeetharanB)
 
 ## 🙏 Acknowledgments
 
