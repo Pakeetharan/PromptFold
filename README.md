@@ -150,63 +150,6 @@ PromptFold/
 ├── src/
 │   ├── app/
 │   │   ├── layout.tsx          # Root layout with metadata
-│   │   ├── page.tsx             # Main application page
-│   │   └── globals.css          # Global styles and Tailwind
-│   ├── components/
-│   │   ├── RichTextInput.tsx    # Editable rich text input
-│   │   ├── PromptOutput.tsx     # Read-only output with copy
-│   │   └── TokenCounter.tsx     # Live token count display
-│   └── utils/
-│       ├── transformer.ts       # Core transformation logic
-│       └── tokenCounter.ts      # Token estimation algorithm
-├── package.json
-├── tsconfig.json
-├── tailwind.config.ts
-├── next.config.js
-└── README.md
-```
-
-### Key Components
-
-#### `transformer.ts`
-
-Pure utility function containing the core transformation logic. Parses HTML, applies optimization rules, and returns deterministic output.
-
-**Functions:**
-
-- `transformToPrompt(html: string): string` - Transforms rich text HTML
-- `transformPlainText(text: string): string` - Handles plain text input
-
-#### `tokenCounter.ts`
-
-Token estimation using a rough heuristic (~0.75 tokens per word) acceptable for GPT-style tokenizers.
-
-**Function:**
-
-- `estimateTokenCount(text: string): number` - Returns estimated token count
-
-#### Component Architecture
-
-- **RichTextInput**: ContentEditable div with paste handling
-- **PromptOutput**: Read-only textarea with copy button
-- **TokenCounter**: Display component for token count
-- **Page**: Main orchestrator using React hooks for state management
-
-### State Management
-
-- Local React state only (`useState`)
-- Memoized transformations (`useMemo`) to avoid unnecessary re-renders
-- Callback optimization (`useCallback`) for event handlers
-
-## 🏗️ Architecture
-
-### Project Structure
-
-```
-PromptFold/
-├── src/
-│   ├── app/
-│   │   ├── layout.tsx          # Root layout with metadata
 │   │   ├── page.tsx            # Main application page
 │   │   └── globals.css         # Global styles and Tailwind
 │   ├── components/
