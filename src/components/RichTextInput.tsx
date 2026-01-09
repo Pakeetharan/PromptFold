@@ -68,6 +68,16 @@ export default function RichTextInput({ value, onChange }: RichTextInputProps) {
     }
   }, []);
 
+  // Clear the input
+  const handleClear = useCallback(() => {
+    if (editorRef.current) {
+      editorRef.current.innerHTML = '';
+      isUserTyping.current = true;
+      onChange('');
+      editorRef.current.focus();
+    }
+  }, [onChange]);
+
   // Sync external value changes (but not during user typing)
   useEffect(() => {
     if (editorRef.current && !isUserTyping.current) {
@@ -82,8 +92,21 @@ export default function RichTextInput({ value, onChange }: RichTextInputProps) {
     <div className="flex flex-col h-full">
       {/* Header */}
       <div className="mb-4 pb-3 border-b border-gray-300 bg-gradient-to-r from-blue-600 to-blue-700 -mx-6 -mt-6 px-6 pt-6 rounded-t-xl">
-        <h2 className="text-lg font-semibold text-white mb-1">Rich Text Input</h2>
-        <p className="text-sm text-blue-100">Paste rich text • Formatting will be stripped</p>
+        <div className="flex justify-between items-start">
+          <div>
+            <h2 className="text-lg font-semibold text-white mb-1">Rich Text Input</h2>
+            <p className="text-sm text-blue-100">Paste rich text • Formatting will be stripped</p>
+          </div>
+          <button
+            onClick={handleClear}
+            disabled={!value}
+            className="px-3 py-1.5 text-sm font-medium text-blue-700 bg-white rounded-lg hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-600 disabled:bg-gray-200 disabled:text-gray-400 disabled:cursor-not-allowed transition-colors shadow-sm"
+            aria-label="Clear input"
+            title="Clear input"
+          >
+            Clear
+          </button>
+        </div>
       </div>
 
       <div
